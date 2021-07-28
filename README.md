@@ -1,7 +1,7 @@
 # EFCorePossibleBug
 EF Core possible bug reproduction mini project.
 
-Prerequisites:
+Prerequisites:  
 .NET 5.0
 
 Project uses an SQLite database. If you wish to look inside it, I recommend downloading DB Browser for SQLite https://sqlitebrowser.org/dl/
