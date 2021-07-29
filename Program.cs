@@ -7,6 +7,8 @@ namespace EFBugReproduction
     {
         private static void Main()
         {
+            // * Used before the 20210728124648_ScoreComponents migration is applied to
+            // * insert one item into db.
             using (var context = new OffersContext())
             {
                 Offer offer = context.Offers.FirstOrDefault();
@@ -21,15 +23,20 @@ namespace EFBugReproduction
             using (var context = new OffersContext())
             {
                 var offer = context.Offers.FirstOrDefault();
-                try 
+
+                if (offer != null)
                 {
-                    offer.UpdateScoreDeliveryTypeComponent(DeliveryType.Auto);
-                    context.SaveChanges();
-                } 
-                catch (Exception e)
-                {
-                    Console.WriteLine("Here goes the exception: ");
-                    Console.WriteLine(e);
+                    try
+                    {
+                        // ! Uncomment (step 3)
+                        // offer.UpdateOfferScoreComponents(51, DeliveryType.Auto);
+                        context.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Here goes the exception: ");
+                        Console.WriteLine(e);
+                    }
                 }
             }
         }
