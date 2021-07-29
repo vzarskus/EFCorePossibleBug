@@ -16,20 +16,20 @@ Install using .NET CLI:
     `dotnet ef database update`  
     `dotnet run` - this will insert one item into db.  
     The state of the *Offers* table should be:  
-| Id         | Score_Score |
-|------------|-------------|
-| <someGuid> | 14.0        |
-|            |             |
+| Id         | Score_Score |  
+|------------|-------------|  
+| <someGuid> | 14.0        |  
+|            |             |  
 2. Comment out the code marked with "! Comment out (step 2)"  
 3. Uncomment the code marked with "! Uncomment (step 3)".  
 4. Run:  
     `dotnet ef migrations add ScoreComponents`  
     `dotnet ef database update`  
     The state of the *Offers* table should now be:  
-| Id         | Score_Score | Score_DeliveryTypeScore | Score_RandomScore | Score_RatingScore |
-|------------|-------------|-------------------------|-------------------|-------------------|
-| <someGuid> | 14.0        | NULL                    | NULL              | NULL              |
-|            |             |                         |                   |                   |
+| Id         | Score_Score | Score_DeliveryTypeScore | Score_RandomScore | Score_RatingScore |  
+|------------|-------------|-------------------------|-------------------|-------------------|  
+| <someGuid> | 14.0        | NULL                    | NULL              | NULL              |  
+|            |             |                         |                   |                   |  
 5. Run `dotnet run` or debug the project and you should recieve the error resulting from the whole  
 *Score* owned entity being **null**, although one of its properties has value.  
  
