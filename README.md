@@ -10,7 +10,7 @@ Project uses an SQLite database. If you wish to inspect it, I recommend download
 `dotnet tool install --global dotnet-ef`  
 `dotnet add package Microsoft.EntityFrameworkCore.Design`  
 
-
+  
 **Please follow these steps to reproduce the issue:**  
 1. Run these commands:  
     `dotnet ef migrations add InitialMigration`  
