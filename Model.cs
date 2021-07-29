@@ -39,12 +39,32 @@ namespace EFBugReproduction
             Score = new ScoreVO(initialScore);
         }
 
-        public void UpdateScoreDeliveryTypeComponent(DeliveryType deliveryType)
-        {
-            Score.CalculateDeliveryTypeScore(deliveryType);
-        }
+        // ! Uncomment (step 3)
+        // public void UpdateOfferScoreComponents(long rating, DeliveryType deliveryType)
+        // {
+        //     Score.CalculateRandomScore();
+        //     Score.CalculateRatingCountScore(rating);
+        //     Score.CalculateDeliveryTypeScore(deliveryType);
+        // }
     }
 
+    // ! Comment out (step 2)
+    // [Owned]
+    // public class ScoreVO
+    // {
+    //     [Column(TypeName = "FLOAT(53)")]
+    //     public double Score { get; private set; }
+
+    //     private ScoreVO()
+    //     { }
+
+    //     public ScoreVO(double initialScore)
+    //     {
+    //         Score = initialScore;
+    //     }
+    // }
+
+    // ! Uncomment (step 3)
     [Owned]
     public class ScoreVO
     {
@@ -93,21 +113,6 @@ namespace EFBugReproduction
             UpdateScore();
         }
     }
-    
-    // [Owned]
-    // public class ScoreVO
-    // {
-    //     [Column(TypeName = "FLOAT(53)")]
-    //     public double Score { get; private set; }
-
-    //     private ScoreVO()
-    //     { }
-
-    //     public ScoreVO(double initialScore)
-    //     {
-    //         Score = initialScore;
-    //     }
-    // }
 
     public enum DeliveryType
     {
