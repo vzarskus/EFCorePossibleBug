@@ -19,8 +19,7 @@ Project uses an SQLite database. If you wish to inspect it, I recommend download
 
     | Id         | Score_Score |  
     |------------|-------------|  
-    | <someGuid> | 14.0        |  
-    |            |             |  
+    | *someGuid* | 14.0        |  
 2. Comment out the code marked with "! Comment out (step 2)"  
 3. Uncomment the code marked with "! Uncomment (step 3)".  
 4. Run:  
@@ -30,7 +29,6 @@ Project uses an SQLite database. If you wish to inspect it, I recommend download
 
     | Id         | Score_Score | Score_DeliveryTypeScore | Score_RandomScore | Score_RatingScore |  
     |------------|-------------|-------------------------|-------------------|-------------------|  
-    | <someGuid> | 14.0        | NULL                    | NULL              | NULL              |  
-    |            |             |                         |                   |                   |  
+    | *someGuid* | 14.0        | NULL                    | NULL              | NULL              |  
 5. Run `dotnet run` or debug the project and you should recieve the error resulting from the whole  
 *Score* owned entity being **null**, although one of its properties *Score_Score* has value.  
