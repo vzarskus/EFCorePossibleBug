@@ -40,10 +40,8 @@ namespace EFBugReproduction
         }
 
         // ! Uncomment (step 3)
-        // public void UpdateOfferScoreComponents(long rating, DeliveryType deliveryType)
+        // public void UpdateOfferScoreComponents(DeliveryType deliveryType)
         // {
-        //     Score.CalculateRandomScore();
-        //     Score.CalculateRatingCountScore(rating);
         //     Score.CalculateDeliveryTypeScore(deliveryType);
         // }
     }
@@ -71,13 +69,6 @@ namespace EFBugReproduction
     //     [Column(TypeName = "FLOAT(53)")]
     //     public double Score { get; private set; }
 
-    //     [Column(TypeName = "FLOAT(53)")]
-    //     public double RandomScore { get; private set; }
-
-    //     [Column(TypeName = "FLOAT(53)")]
-    //     public double RatingScore { get; private set; }
-
-    //     [Column(TypeName = "FLOAT(53)")]
     //     public double DeliveryTypeScore { get; private set; }
 
     //     private ScoreVO()
@@ -90,21 +81,7 @@ namespace EFBugReproduction
 
     //     protected void UpdateScore()
     //     {
-    //         Score = RandomScore +
-    //                 RatingScore +
-    //                 DeliveryTypeScore;
-    //     }
-
-    //     public void CalculateRandomScore()
-    //     {
-    //         RandomScore = new Random().NextDouble();
-    //         UpdateScore();
-    //     }
-
-    //     public void CalculateRatingCountScore(long rating)
-    //     {
-    //         RatingScore = rating > 50 ? 100 : 0;
-    //         UpdateScore();
+    //         Score += DeliveryTypeScore;
     //     }
 
     //     public void CalculateDeliveryTypeScore(DeliveryType deliveryType)

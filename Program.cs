@@ -27,7 +27,7 @@ namespace EFBugReproduction
                     try
                     {
                         // ! Uncomment (step 3)
-                        // offer.UpdateOfferScoreComponents(51, DeliveryType.Auto);
+                        // offer.UpdateOfferScoreComponents(DeliveryType.Auto);
                         context.SaveChanges();
                     }
                     catch (Exception e)
