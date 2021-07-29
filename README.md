@@ -31,3 +31,6 @@ Project uses an SQLite database. If you wish to inspect it, I recommend download
     | *someGuid* | 14.0        | NULL                    | NULL              | NULL              |  
 5. Run `dotnet run` or debug the project and you should recieve the error resulting from the whole  
 *Score* owned entity being **null**, although one of its properties *Score_Score* has value.  
+
+This issue can be reproduced with any number of properties that have some value - as long as one of them is **null**,
+the whole owned entity object is returned as **null**.
