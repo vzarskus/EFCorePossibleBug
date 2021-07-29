@@ -6,7 +6,7 @@
 
 Project uses an SQLite database. If you wish to inspect it, I recommend downloading DB Browser for SQLite https://sqlitebrowser.org/dl/
 
-Install using .NET CLI:  
+**Install using .NET CLI:**  
 `dotnet tool install --global dotnet-ef`  
 `dotnet add package Microsoft.EntityFrameworkCore.Design`  
 
@@ -32,5 +32,3 @@ Install using .NET CLI:
 |            |             |                         |                   |                   |  
 5. Run `dotnet run` or debug the project and you should recieve the error resulting from the whole  
 *Score* owned entity being **null**, although one of its properties has value.  
- 
-
