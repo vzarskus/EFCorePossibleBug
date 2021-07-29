@@ -49,36 +49,11 @@ namespace EFBugReproduction
     }
 
     // ! Comment out (step 2)
-    // [Owned]
-    // public class ScoreVO
-    // {
-    //     [Column(TypeName = "FLOAT(53)")]
-    //     public double Score { get; private set; }
-
-    //     private ScoreVO()
-    //     { }
-
-    //     public ScoreVO(double initialScore)
-    //     {
-    //         Score = initialScore;
-    //     }
-    // }
-
-    // ! Uncomment (step 3)
     [Owned]
     public class ScoreVO
     {
         [Column(TypeName = "FLOAT(53)")]
         public double Score { get; private set; }
-
-        [Column(TypeName = "FLOAT(53)")]
-        public double RandomScore { get; private set; }
-
-        [Column(TypeName = "FLOAT(53)")]
-        public double RatingScore { get; private set; }
-
-        [Column(TypeName = "FLOAT(53)")]
-        public double DeliveryTypeScore { get; private set; }
 
         private ScoreVO()
         { }
@@ -87,32 +62,57 @@ namespace EFBugReproduction
         {
             Score = initialScore;
         }
-
-        protected void UpdateScore()
-        {
-            Score = RandomScore +
-                    RatingScore +
-                    DeliveryTypeScore;
-        }
-
-        public void CalculateRandomScore()
-        {
-            RandomScore = new Random().NextDouble();
-            UpdateScore();
-        }
-
-        public void CalculateRatingCountScore(long rating)
-        {
-            RatingScore = rating > 50 ? 100 : 0;
-            UpdateScore();
-        }
-
-        public void CalculateDeliveryTypeScore(DeliveryType deliveryType)
-        {
-            DeliveryTypeScore = deliveryType == DeliveryType.Auto ? 100 : 0;
-            UpdateScore();
-        }
     }
+
+    // ! Uncomment (step 3)
+    // [Owned]
+    // public class ScoreVO
+    // {
+    //     [Column(TypeName = "FLOAT(53)")]
+    //     public double Score { get; private set; }
+
+    //     [Column(TypeName = "FLOAT(53)")]
+    //     public double RandomScore { get; private set; }
+
+    //     [Column(TypeName = "FLOAT(53)")]
+    //     public double RatingScore { get; private set; }
+
+    //     [Column(TypeName = "FLOAT(53)")]
+    //     public double DeliveryTypeScore { get; private set; }
+
+    //     private ScoreVO()
+    //     { }
+
+    //     public ScoreVO(double initialScore)
+    //     {
+    //         Score = initialScore;
+    //     }
+
+    //     protected void UpdateScore()
+    //     {
+    //         Score = RandomScore +
+    //                 RatingScore +
+    //                 DeliveryTypeScore;
+    //     }
+
+    //     public void CalculateRandomScore()
+    //     {
+    //         RandomScore = new Random().NextDouble();
+    //         UpdateScore();
+    //     }
+
+    //     public void CalculateRatingCountScore(long rating)
+    //     {
+    //         RatingScore = rating > 50 ? 100 : 0;
+    //         UpdateScore();
+    //     }
+
+    //     public void CalculateDeliveryTypeScore(DeliveryType deliveryType)
+    //     {
+    //         DeliveryTypeScore = deliveryType == DeliveryType.Auto ? 100 : 0;
+    //         UpdateScore();
+    //     }
+    // }
 
     public enum DeliveryType
     {
