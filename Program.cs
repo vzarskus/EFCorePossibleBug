@@ -7,8 +7,6 @@ namespace EFBugReproduction
     {
         private static void Main()
         {
-            // * Used before the 20210728124648_ScoreComponents migration is applied to
-            // * insert one item into db.
             using (var context = new OffersContext())
             {
                 Offer offer = context.Offers.FirstOrDefault();

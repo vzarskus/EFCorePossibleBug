@@ -14,7 +14,7 @@ namespace EFBugReproduction
         public OffersContext()
         {
             var path = Environment.CurrentDirectory;
-            DbPath = $"{path}{System.IO.Path.DirectorySeparatorChar}/database/offers.db";
+            DbPath = $"{path}{System.IO.Path.DirectorySeparatorChar}/offers.db";
         }
 
         // Configure SQLite db
