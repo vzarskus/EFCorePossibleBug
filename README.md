@@ -6,9 +6,8 @@
 
 Project uses an SQLite database. If you wish to inspect it, I recommend downloading DB Browser for SQLite https://sqlitebrowser.org/dl/
 
-**Install using .NET CLI:**  
-`dotnet tool install --global dotnet-ef`  
-`dotnet add package Microsoft.EntityFrameworkCore.Design`  
+**Install dotnet-ef CLI if you do not have it already:**  
+`dotnet tool install --global dotnet-ef` 
 
 **Please follow these steps to reproduce the issue:**  
 1. Run these commands:  
